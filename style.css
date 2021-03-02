@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 10px;
+}
+
+.main {
+  background: var(--Dark-cyan);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.main:before {
+  content: "";
+  position: absolute;
+  background-image: url("./img/bg-pattern-top.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -20%;
+}
+.main:after {
+  content: "";
+  position: absolute;
+  background-image: url("./img/bg-pattern-bottom.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  bottom: -58%;
+  right: -58%;
+}
+
+.bg-img {
+  position: absolute;
+  width: 800px;
+  display: none;
+}
+
+.bg-top {
+  transform: translateX(-200px);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  width: 270px;
+  padding: 80px 0px 20px 0px;
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  background-image: url("./img/bg-pattern-card.svg");
+  width: 100%;
+  height: 120px;
+  top: 0;
+}
+
+.card-bg,
+.card-bg img {
+  width: 100%;
+  display: none;
+}
+
+.card-user {
+  z-index: 20;
+  box-shadow: inset 0px -0.3px 0px var(--Dark-gray);
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.card-user-img img {
+  width: 80px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+#user-name {
+  line-height: 2;
+}
+
+#user-name,
+#card-user-location,
+.card-stats-type {
+  color: var(--Dark-gray);
+}
+
+#card-user-name {
+  color: var(--Very-dark-desaturated-blue);
+}
+
+#user-name,
+.card-stats b {
+  font-size: 18px;
+}
+
+.card-stats {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+  margin-top: 20px;
+}
+
+.card-stats > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#card-user-location,
+.card-stats-type {
+  color: var(--Dark-gray);
+}
+
+@media (max-width: 415px) {
+  .main:before {
+    top: -20%;
+    left: -50%;
+  }
+  .main:after {
+    bottom: -58%;
+    right: -58%;
+  }
+}
